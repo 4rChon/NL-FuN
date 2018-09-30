@@ -1,0 +1,38 @@
+{
+    "features": {
+        "screen": [
+            "player_id",
+            "player_relative",
+            "unit_type",
+            "selected"
+        ],
+        "minimap": [
+            "player_id",
+            "player_relative",
+            "selected",
+        ],
+        "non_spatial": [
+            "available_actions",
+        ]
+    },
+
+    "forced_scalars": {
+        "screen": [
+            "player_id"
+        ],
+        "minimap": [
+            "player_id"
+        ]
+    },
+
+    "unit_types": [
+        18,
+        19,
+        21,
+        45,
+        48,
+        110,
+        317,
+        341
+    ]
+}

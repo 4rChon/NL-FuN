@@ -1,0 +1,53 @@
+{
+    "screen": [
+        "height_map",
+        "visibility_map",
+        "creep",
+        "power",
+        "player_id",
+        "player_relative",
+        "unit_type",
+        "selected",
+        "unit_hit_points",
+        "unit_hit_points_ratio",
+        "unit_energy",
+        "unit_energy_ratio",
+        "unit_shields",
+        "unit_shields_ratio",
+        "unit_density",
+        "unit_density_aa",
+        "effects"
+    ],
+    "minimap": [
+        "height_map",
+        "visibility_map",
+        "creep",
+        "camera",
+        "player_id",
+        "player_relative",
+        "selected"
+    ],
+    "non_spatial": [
+        "player",
+        "game_loop",
+        "score_cumulative",
+        "available_actions",
+        "single_select",
+        "multi_select",
+        "cargo",
+        "cargo_slots_available",
+        "build_queue",
+        "control_groups"
+    ],
+    "unit_types": [
+        18, # command center
+        19, # supply depot
+        21, # barracks
+        45, # scv
+        48, # marines
+        317, # beacon
+        341, # mineral field
+        73, # zealot
+        74  # stalker
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "features": {
+        "screen": [
+            "player_id",
+            "player_relative",
+            "unit_type",
+            "selected",
+            "unit_density_aa"
+        ],
+        "minimap": [
+            "player_id",
+            "player_relative",
+            "selected"
+        ],
+        "non_spatial": [
+            "player",
+            "available_actions",
+            "single_select",
+            "build_queue"
+        ]
+    },
+
+    "forced_scalars": {
+        "screen": [
+            "player_id"
+        ],
+        "minimap": [
+            "player_id"
+        ]
+    },
+
+    "unit_types": [
+        18,
+        19,
+        21,
+        45,
+        341,
+        48
+    ]
+}

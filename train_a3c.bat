@@ -1,0 +1,1 @@
+python train.py --optimiser a3c --network AtariNet --num_workers 4 --num_ps 1 --map MoveToBeacon

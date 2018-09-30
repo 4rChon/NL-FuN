@@ -1,4 +1,4 @@
-# pysc2-rl-nn
+# NL-FuN
 * Recreate baselines produced by O. Vinyals et al (2017) in StarCraft II: A New Challenge for Reinforcement Learning
 * Modify FeUdal Networks (FUN) by A. S. Vezhnevets et al (2017) to suit the PySC2 observations.
 * Generalize FUN to additional layers (WIP).

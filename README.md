@@ -1,7 +1,7 @@
 # NL-FuN
 * Recreate baselines produced by O. Vinyals et al (2017) in StarCraft II: A New Challenge for Reinforcement Learning
 * Modify FeUdal Networks (FUN) by A. S. Vezhnevets et al (2017) to suit the PySC2 observations.
-* Generalize FUN to additional layers (WIP).
+* Generalize FUN to additional layers.
 
 ## Use
 I've added .bat files with examples of how to run the train.py file (need to change its name). The .bat files produce a shell command for each worker specified. Add *--linux* to produce .sh files instead. Use --python_v [python_cmd] to specify what command to run python with. For example: --python_v python3 if you have both python 2.x and python 3.x installed.

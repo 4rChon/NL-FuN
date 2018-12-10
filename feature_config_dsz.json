@@ -16,7 +16,7 @@
         ],
         "non_spatial": [
             "available_actions",
-            "single_select",
+            "single_select"
         ]
     },
 

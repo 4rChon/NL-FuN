@@ -10,7 +10,7 @@
         "minimap": [
             "player_id",
             "player_relative",
-            "selected",
+            "selected"
         ],
         "non_spatial": [
             "player",

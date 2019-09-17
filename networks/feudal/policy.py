@@ -1,11 +1,16 @@
-import tensorflow as tf
 import numpy as np
-from networks.feudal.batch_processor import FeudalBatchProcessor
 import common
+
+import tensorflow as tf
+
+from pysc2.lib import actions
+
+from networks.feudal.batch_processor import FeudalBatchProcessor
 from networks import util
 from networks.feudal.citizens import SuperManager, Worker
 
-from pysc2.lib import actions
+screen = common.SCREEN_KEY
+minimap = common.MINIMAP_KEY
 
 
 class FeudalPolicy:
@@ -14,8 +19,8 @@ class FeudalPolicy:
         self.config = config
 
         self.num_actions = len(actions.FUNCTIONS)
-        self.s_size = obs_spec["screen"][1]
-        self.m_size = obs_spec["minimap"][1]
+        self.s_size = obs_spec[screen][1]
+        self.m_size = obs_spec[minimap][1]
 
         self.worker = Worker(config, self.num_actions, self.s_size, self.m_size)
         self.manager = SuperManager(config, "manager")

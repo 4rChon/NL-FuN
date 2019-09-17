@@ -7,13 +7,16 @@ from networks import util
 
 from pysc2.lib import actions
 
+screen = common.SCREEN_KEY
+minimap = common.MINIMAP_KEY
+
 
 class DeepFeudalPolicy:
     def __init__(self, obs_spec, config):
         self.obs_spec = obs_spec
         self.config = config
-        self.s_size = obs_spec["screen"][1]
-        self.m_size = obs_spec["minimap"][1]
+        self.s_size = obs_spec[screen][1]
+        self.m_size = obs_spec[minimap][1]
         self.num_actions = len(actions.FUNCTIONS)
 
         self.worker = Worker(config, self.num_actions, self.s_size, self.m_size)

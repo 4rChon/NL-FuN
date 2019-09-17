@@ -11,6 +11,9 @@ from optimisers.rollout import PartialRollout
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+screen = common.SCREEN_KEY
+minimap = common.MINIMAP_KEY
+
 
 def process_a3c_rollout(rollout, gamma):
     batch_obs = rollout.obs
@@ -33,7 +36,7 @@ def rollout_provider(env, policy, num_local_steps, result_tracker=None):
     last_obs = env.reset()[0].observation
     length = 0
     rewards = 0
-    size = len(last_obs['screen'][1])
+    size = len(last_obs[screen][1])
     current_sess_episode = 0
 
     while True:

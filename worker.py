@@ -1,8 +1,9 @@
 import tensorflow as tf
 import logging
 import os
-from pysc2.env import sc2_env
 import time
+
+from pysc2.env import sc2_env
 
 from optimisers import init_optimiser, init_config
 from envs import create_env
@@ -21,9 +22,9 @@ tf.flags.DEFINE_string("device", "cpu", "Device to use for tensor operations.")
 
 # Environment Flags
 tf.flags.DEFINE_string("map", "DefeatSingleZealot", "Name of a map to use.")
-tf.flags.DEFINE_enum("agent_race", "T", sc2_env.races.keys(), "Agent's race.")
-tf.flags.DEFINE_enum("bot_race", "T", sc2_env.races.keys(), "Opponent's race.")
-tf.flags.DEFINE_enum("difficulty", None, sc2_env.difficulties.keys(), "Bot's strength.")
+tf.flags.DEFINE_string("agent_race", "T", "Agent's race: T, P, Z, R")
+tf.flags.DEFINE_string("bot_race", "T", "Opponent's race: T, P, Z, R")
+# tf.flags.DEFINE_enum("bot_difficulty", None, sc2_env.difficulties.keys(), "Opponent's strength.")
 tf.flags.DEFINE_integer("step_mul", 8, "Game steps per agent step.")
 tf.flags.DEFINE_integer("screen_resolution", 32, "Resolution for screen feature layers.")
 tf.flags.DEFINE_integer("minimap_resolution", 32, "Resolution for minimap feature layers.")
@@ -121,10 +122,8 @@ def run(server, cluster):
     )
 
     stop_hook = tf.train.StopAtStepHook(num_steps=opt_config.max_global_eps*opt_config.steps_in_ep)
-    # sync_replicas_hook = optimiser.opt.make_session_run_hook(args.task == 0)
     hooks = [
         stop_hook,
-        # sync_replicas_hook,
     ]
 
     logger.info(

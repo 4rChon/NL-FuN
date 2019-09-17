@@ -4,6 +4,9 @@ from pysc2.lib import features, actions
 
 from common import preprocessing as pp
 
+SCREEN_KEY = "feature_screen"  # "rgb_screen"
+MINIMAP_KEY = "feature_minimap"  # "rgb_minimap"
+
 
 def minimap_obs(obs):
     """
@@ -15,7 +18,7 @@ def minimap_obs(obs):
     """
     return np.expand_dims(
         pp.preprocess_spatial_features(
-            obs['minimap'],
+            obs[MINIMAP_KEY],
             features.MINIMAP_FEATURES,
             pp.FORCED_SCALARS["minimap"],
             pp.INCLUDED_FEATURES["minimap"]
@@ -35,7 +38,7 @@ def screen_obs(obs):
     # shape = (17, size_s, size_s)
     return np.expand_dims(
         pp.preprocess_spatial_features(
-            obs["screen"],
+            obs[SCREEN_KEY],
             features.SCREEN_FEATURES,
             pp.FORCED_SCALARS["screen"],
             pp.INCLUDED_FEATURES["screen"]

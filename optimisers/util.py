@@ -4,7 +4,7 @@ from collections import namedtuple
 
 
 def get_network(NetworkClass, env, config):
-        network = NetworkClass(env.observation_spec(), config)
+        network = NetworkClass(env.observation_spec()[0], config)
         return network
 
 

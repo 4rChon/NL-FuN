@@ -1,6 +1,5 @@
 import numpy as np
 import tensorflow as tf
-
 import common
 from networks import blocks, util
 from tensorflow.contrib import layers
@@ -9,13 +8,16 @@ import logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+screen = common.SCREEN_KEY
+minimap = common.MINIMAP_KEY
+
 
 class Policy:
     def __init__(self, obs_spec, config, scope):
         self.config = config
         self.scope = scope
-        self.s_size = obs_spec["screen"][1]
-        self.m_size = obs_spec["minimap"][1]
+        self.s_size = obs_spec[screen][1]
+        self.m_size = obs_spec[minimap][1]
         self.pi = self.vf = None
         self.epsilon = self.config.epsilon_start
         self.beta = self.config.beta_start

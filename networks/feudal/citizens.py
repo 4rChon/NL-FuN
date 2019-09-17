@@ -1,8 +1,13 @@
-import tensorflow as tf
-from networks import blocks
 import numpy as np
-
 import logging
+
+import tensorflow as tf
+
+from networks import blocks
+import common
+
+screen = common.SCREEN_KEY
+minimap = common.MINIMAP_KEY
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -222,8 +227,8 @@ class Worker(Citizen):
     def build_perception(self, obs):
         logger.info("Building %s perception..." % self.scope)
         with tf.variable_scope(self.scope):
-            m_conv = blocks.cnn(obs["minimap"], "minimap_feat")
-            s_conv = blocks.cnn(obs["screen"], "screen_feat")
+            m_conv = blocks.cnn(obs[minimap], "minimap_feat")
+            s_conv = blocks.cnn(obs[screen], "screen_feat")
 
             self.s = blocks.concat(m_conv, s_conv, obs["non_spatial"], "percept_concat")
 

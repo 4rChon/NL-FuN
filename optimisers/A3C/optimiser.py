@@ -36,8 +36,8 @@ class A3C(Optimiser):
             tf.summary.histogram("Value", self.network.vf),
             tf.summary.histogram("Spatial_Policy", self.network.pi["spatial"]),
             tf.summary.histogram("Non_Spatial_Policy", self.network.pi["non_spatial"]),
-            tf.summary.image("Spatial_Policy", tf.reshape(self.network.pi["spatial"], [-1, 32, 32, 1]), max_outputs=1),
-            tf.summary.image("Unit Type", tf.reshape(self.network.obs["screen"][2], [-1, 32, 32, 1]), max_outputs=1)
+            tf.summary.image("Spatial_Policy", tf.reshape(self.network.pi["spatial"], [-1, 32, 32, 1]), max_outputs=1)
+            # tf.summary.image("Unit Type", tf.reshape(self.network.obs["screen"][2], [-1, 32, 32, 1]), max_outputs=1)
         ]
 
         if self.config.e_greedy:

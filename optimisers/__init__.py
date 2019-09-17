@@ -14,7 +14,6 @@ def init_optimiser(args, task, env, config, summary_writer=None, result_tracker=
             network=args.network,
             summary_writer=summary_writer,
             result_tracker=result_tracker
-
         )
     elif args.optimiser == 'feudal':
         return Feudal.optimiser(
